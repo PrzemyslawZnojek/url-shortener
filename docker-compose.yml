@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  dbpostgresql:
+    image: postgres
+    container_name: postgresDatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=url-shortener
+
+  url-shortener:
+    image: url-shortener/url-shortener
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE_PATH: ./build/libs/*.jar
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql
+
+volumes:
+  db-data:
