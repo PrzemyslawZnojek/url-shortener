@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.1.5'
     id 'io.spring.dependency-management' version '1.1.3'
-    id 'org.hibernate.orm' version '6.3.0.Final'
+    id 'org.hibernate.orm' version '6.3.1.Final'
 }
 
 group = 'com.rhinocode'
@@ -18,7 +18,10 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.hibernate.orm:hibernate-core'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.postgresql:postgresql'
+
+    //Tests
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
