@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/changesets/1699532747549_create_user.sql
