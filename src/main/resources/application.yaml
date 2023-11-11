@@ -10,3 +10,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   liquibase:
     change-log: liquibase/changelog.yaml
+springdoc:
+  swagger-ui:
+    path: /api
