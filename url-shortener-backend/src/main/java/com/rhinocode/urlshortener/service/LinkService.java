@@ -12,7 +12,7 @@ public class LinkService implements ILinkService {
 
     @Override
     public String createShortcut(String originLink) {
-        return generator.generate(originLink);
+        return generator.generate();
     }
 
     @Override
