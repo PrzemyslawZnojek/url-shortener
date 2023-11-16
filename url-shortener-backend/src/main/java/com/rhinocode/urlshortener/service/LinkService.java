@@ -1,7 +1,9 @@
 package com.rhinocode.urlshortener.service;
 
 import com.rhinocode.urlshortener.generator.IShortcutGenerator;
+import org.springframework.stereotype.Service;
 
+@Service
 public class LinkService implements ILinkService {
 
     private final IShortcutGenerator generator;
