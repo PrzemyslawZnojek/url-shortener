@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import LinkList from './components/LinkList'
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold">Hello world!</h1>
+      <div className="flex justify-center align-center h-screen bg-auto bg-gradient-to-tr from-cyan-500 to-blue-500">
+        <LinkList />
+      </div>
     </div>
   );
 }
