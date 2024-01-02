@@ -2,7 +2,7 @@ import Link from "./Link"
 
 export default function LinkList() {
   return (
-    <div className="flex flex-col rounded-md h-1/2 w-1/2 p-10 bg-gray-200 font-medium text-xl">
+    <div className="flex flex-col rounded-md h-1/2 w-1/2 p-10 bg-gray-200 font-medium text-xl overflow-auto">
       <div className="flex my-2 text-zinc-500">
         <div className="flex w-1/3"> 
           <h1>Long Url</h1>
@@ -16,7 +16,7 @@ export default function LinkList() {
       </div>
       <Link />
       <Link />
-      <Link />    
+      <Link />
     </div>
   )
 }
