@@ -1,9 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: liquibase/changesets/1699532747549_create_user.sql
-  - include:
-      file: liquibase/changesets/1699563970412_change_pk_user.sql
-  - include:
-      file: liquibase/changesets/1699877068671_create_link.sql
-  - include:
-      file: liquibase/changesets/1699879941473_rename_columns_link.sql

@@ -1,9 +1,0 @@
--- liquibase formatted sql
-
--- changeset pznojek:1699879941473_rename_columns_link
-
--- alter table
-
-ALTER TABLE LINK RENAME COLUMN LONG_VERSION TO ORIGIN;
-ALTER TABLE LINK RENAME COLUMN SHORT_VERSION TO SHORTCUT;
-ALTER TABLE LINK ADD CONSTRAINT shortcut_unique UNIQUE (SHORTCUT);
