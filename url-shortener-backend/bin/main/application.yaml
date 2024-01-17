@@ -4,8 +4,10 @@ spring:
       host: mongo-db
       port: 27017
       database: url
-      username: user
+      username: root
       password: password
+      auto-index-creation: true
+      authentication-database: admin
 
 springdoc:
   swagger-ui:
