@@ -1,32 +1,27 @@
 package com.rhinocode.urlshortener.entity;
 
-import jakarta.persistence.Entity;
-
-import jakarta.persistence.Table;
-
 import java.time.Instant;
-import java.util.UUID;
 
-@Entity
-@Table(name = "users")
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "users")
 public class User {
 
-    private UUID id;
-
-    //@NotBlank(message = "Email is mandatory")
-    //@Email(message = "Invalid Email form", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}",
-    //        flags = Pattern.Flag.CASE_INSENSITIVE)
+    @Id
+    private String id;
+    @Indexed(unique = true, direction = IndexDirection.DESCENDING)
     private String email;
-    private String hashedPassword;
+    private String password;
     private Instant insertedAt;
     private Instant updatedAt;
 
-    User() {}
-
-    public User(String email, String hashedPassword) {
+    public User(String email, String password, Instant insertedAt, Instant updatedAt) {
         this.email = email;
-        this.hashedPassword = hashedPassword;
-        this.insertedAt = Instant.now();
-        this.updatedAt = Instant.now();
+        this.password = password;
+        this.insertedAt = insertedAt;
+        this.updatedAt = updatedAt;
     }
 }
