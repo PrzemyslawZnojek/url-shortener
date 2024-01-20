@@ -12,18 +12,6 @@ services:
     volumes: 
       - db-data:/data/db
 
-  url-shortener-backend:
-    image: url-shortener/url-shortener-backend
-    build:
-      context: .
-      dockerfile: ./url-shortener-backend/Dockerfile
-      args:
-        JAR_FILE_PATH: ./url-shortener-backend/build/libs/*.jar
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mongo-db 
-
   mongo-express:
     image: mongo-express
     restart: always
