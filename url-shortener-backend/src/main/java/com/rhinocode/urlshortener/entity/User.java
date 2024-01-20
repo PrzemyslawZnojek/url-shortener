@@ -24,4 +24,24 @@ public class User {
         this.insertedAt = insertedAt;
         this.updatedAt = updatedAt;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Instant getInsertedAt() {
+        return insertedAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
+    }
 }

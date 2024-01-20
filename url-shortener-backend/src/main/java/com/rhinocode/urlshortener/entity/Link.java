@@ -26,4 +26,28 @@ public class Link {
         this.insertedAt = insertedAt;
         this.updatedAt = updatedAt;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getShortcut() {
+        return shortcut;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public Instant getInsertedAt() {
+        return insertedAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
+    }
 }

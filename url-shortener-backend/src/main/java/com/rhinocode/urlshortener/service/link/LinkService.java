@@ -13,17 +13,17 @@ import org.springframework.stereotype.Service;
 public class LinkService implements ILinkService {
 
     private final IShortcutGenerator generator;
-    private final ILinkRepository repository;
+    private final ILinkRepository linkRepository;
 
-    public LinkService(IShortcutGenerator generator, ILinkRepository repository) {
+    public LinkService(IShortcutGenerator generator, ILinkRepository linkRepository) {
         this.generator = generator;
-        this.repository = repository;
+        this.linkRepository = linkRepository;
     }
 
     @Override
     public Link createShortcut(LinkCreateDTO linkCreateDTO) {
         Link link = new Link(generator.generate(), linkCreateDTO.origin(), linkCreateDTO.userId(), Instant.now(), Instant.now());
-        return repository.save(link);
+        return linkRepository.save(link);
     }
 
     @Override
