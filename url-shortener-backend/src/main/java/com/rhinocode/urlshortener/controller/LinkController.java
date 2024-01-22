@@ -1,5 +1,7 @@
 package com.rhinocode.urlshortener.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,5 +34,11 @@ public class LinkController {
     public ResponseEntity<String> getOriginLink(@PathVariable String shortcut) {
         String origin = linkService.getOriginLink(shortcut);
         return ResponseEntity.ok().body(origin);
+    }
+
+    @GetMapping("user-links/{userId}")
+    public ResponseEntity<List<Link>> getAllUserLinks(@PathVariable String userId) {
+        List<Link> userLinks = linkService.getAllUserLinks(userId);
+        return ResponseEntity.ok().body(userLinks);
     }
 }

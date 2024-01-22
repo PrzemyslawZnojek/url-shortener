@@ -6,6 +6,7 @@ import com.rhinocode.urlshortener.generator.IShortcutGenerator;
 import com.rhinocode.urlshortener.repository.ILinkRepository;
 
 import java.time.Instant;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -29,5 +30,10 @@ public class LinkService implements ILinkService {
     @Override
     public String getOriginLink(String shortcut) {
         return linkRepository.findFirstByShortcut(shortcut).getOrigin();
+    }
+
+    @Override
+    public List<Link> getAllUserLinks(String userId) {
+        return linkRepository.findByUserId(userId);
     }
 }
