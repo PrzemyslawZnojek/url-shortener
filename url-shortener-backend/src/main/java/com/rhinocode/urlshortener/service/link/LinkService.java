@@ -28,6 +28,6 @@ public class LinkService implements ILinkService {
 
     @Override
     public String getOriginLink(String shortcut) {
-        return null;
+        return linkRepository.findFirstByShortcut(shortcut).getOrigin();
     }
 }
